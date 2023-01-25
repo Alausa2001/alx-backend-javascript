@@ -11,13 +11,8 @@
  * For every resolution, log Got a response from the API to the console
  */
 export default function handleResponseFromAPI(promise) {
-  const p = new Promise((resolve, reject) => {
-    if (promise) {
-      resolve({ status: 200, body: 'Success' });
-      console.log('Got a response from the API');
-    } else {
-      reject(new Error());
-    }
-  });
-  return p;
+  promise.then(() => {
+    console.log('Got a response from the API');
+    return { status: 200, body: 'success' };
+  }, () => (new Error({})));
 }
