@@ -6,6 +6,7 @@
 // When a value starts with startString you only append the rest of the string.
 // The string contains all the values of the set separated by -.
 export default function cleanSet(set, startString) {
+  if (typeof startString !== 'string') return '';
   const result = [];
   const strLen = startString.length;
   set.forEach((element) => {
