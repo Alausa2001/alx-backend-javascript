@@ -1,4 +1,4 @@
-// Create a function named cleanSet that returns a string of 
+// Create a function named cleanSet that returns a string of
 // all the set values that start with a specific string (startString).
 //
 // It accepts two arguments: a set (Set) and a startString (String).
