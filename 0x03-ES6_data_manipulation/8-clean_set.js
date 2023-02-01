@@ -10,7 +10,7 @@ export default function cleanSet(set, startString) {
   const result = [];
   const strLen = startString.length;
   set.forEach((element) => {
-    if (element.slice(0, strLen) === startString && strLen !== 0) {
+    if (element.slice(0, strLen) === startString && strLen !== 0 && element !== undefined) {
       result.push(element.slice(strLen));
     }
   });
