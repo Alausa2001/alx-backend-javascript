@@ -13,5 +13,8 @@ const student1: Student = {
 }
 
 const student2: Student = {
-  firstName: 'Adetola';
-  lastName: 'Monsurat';
+  firstName: 'Adetola',
+  lastName: 'Monsurat',
+  age: 23,
+  location: 'Canada',
+}
