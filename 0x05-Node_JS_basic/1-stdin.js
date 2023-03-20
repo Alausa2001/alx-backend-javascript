@@ -16,7 +16,7 @@ process.stdin.setEncoding('utf-8');
 
 console.log('Welcome to Holberton School, what is your name?');
 process.stdin.on('data', (data) => {
-  console.log(`Your name is ${data.trim()}`);
+  process.stdout.write(`Your name is ${data.trim()}\n`);
 });
 
 process.stdin.on('end', () => {
