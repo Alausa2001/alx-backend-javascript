@@ -14,20 +14,11 @@
 
 process.stdin.setEncoding('utf-8');
 
-function stdin() {
-  console.log('Welcome to Holberton School, what is your name?');
-  process.stdin.on('data', (data) => {
-    console.log(`Your name is ${data.trim()}`);
-  });
+console.log('Welcome to Holberton School, what is your name?');
+process.stdin.on('data', (data) => {
+  console.log(`Your name is ${data.trim()}`);
+});
 
-  process.stdin.on('end', () => {
-    console.log('This important software is now closing');
-  });
-}
-
-stdin();
-/*
 process.stdin.on('end', () => {
-    console.log('This important software is now closing');
-  });
-*/
+  console.log('This important software is now closing');
+});
