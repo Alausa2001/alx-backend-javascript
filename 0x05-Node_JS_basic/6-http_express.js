@@ -10,3 +10,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(1245, '127.0.0.1');
+
+module.exports = app;
