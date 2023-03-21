@@ -6,17 +6,16 @@
  * (followed by a new line)
  *
  * The user should be able to input their name on a new line
+ *
  * The program should display Your name is: INPUT
  *
  * When the user ends the program,
  * it should display This important software is now closing (followed by a new line)
  */
-
-process.stdin.setEncoding('utf-8');
-
 console.log('Welcome to Holberton School, what is your name?');
-process.stdin.on('data', (data) => {
-  process.stdout.write(`Your name is ${data.trim()}\n`);
+process.stdin.on('readable', () => {
+  const data = process.stdin.read();
+  if (data !== null) process.stdout.write(`Your name is: ${data.toString()}`);
 });
 
 process.stdin.on('end', () => {
