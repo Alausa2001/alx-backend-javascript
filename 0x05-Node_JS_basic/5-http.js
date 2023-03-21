@@ -67,9 +67,9 @@ const app = http.createServer(async (req, res) => {
   if (req.url === '/') res.end('Hello Holberton School!');
 
   else if (req.url === '/students') {
-    res.write('This is the list of our students\n');
     try {
       const students = await countStudents(database);
+      res.write('This is the list of our students\n');
       // msg = msg.join('\n');
       res.end(students.join('\n'));
     } catch (err) {
