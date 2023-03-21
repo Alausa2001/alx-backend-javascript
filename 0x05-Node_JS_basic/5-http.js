@@ -73,7 +73,7 @@ const app = http.createServer(async (req, res) => {
       // msg = msg.join('\n');
       res.end(students.join('\n'));
     } catch (err) {
-      res.end(err.toString());
+      res.end(err.message);
     }
   }
 });
