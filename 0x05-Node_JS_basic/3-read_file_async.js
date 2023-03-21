@@ -1,12 +1,12 @@
 #!/usr/bin/node
 /* reading a file synchronously */
 
-const fs = require('fs/promises');
+const fs = require('fs');
 
 async function countStudents(path) {
   let data;
   try {
-    data = await fs.readFile(path, 'utf-8');
+    data = await fs.promises.readFile(path, 'utf-8');
   } catch (err) {
     throw new Error('Cannot load the database');
   }
