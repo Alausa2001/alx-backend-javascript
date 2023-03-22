@@ -71,13 +71,15 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
+  res.statusCode = 200;
+  res.write('This is the list of our students\n');
   try {
-    res.write('This is the list of our students\n');
+    // res.write('This is the list of our students\n');
     const msg = await countStudents(database);
 
     res.end(msg.join('\n'));
   } catch (err) {
-    res.send(err.message);
+    res.end(err.message);
   }
 });
 
