@@ -72,9 +72,9 @@ app.get('/', (req, res) => {
 app.get('/students', async (req, res) => {
   res.setHeader('Content-Type', 'text/plain');
   try {
-    // res.write('This is the list of our students\n');
-    const msg = await countStudents(database);
     res.write('This is the list of our students\n');
+    const msg = await countStudents(database);
+
     res.end(msg.join('\n'));
   } catch (err) {
     res.send(err.message);

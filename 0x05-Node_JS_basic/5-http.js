@@ -68,8 +68,8 @@ const app = http.createServer(async (req, res) => {
 
   else if (req.url === '/students') {
     try {
-      const students = await countStudents(database);
       res.write('This is the list of our students\n');
+      const students = await countStudents(database);
       // msg = msg.join('\n');
       res.end(students.join('\n'));
     } catch (err) {
