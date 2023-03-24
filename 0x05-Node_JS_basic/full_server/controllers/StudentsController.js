@@ -5,7 +5,7 @@ class StudentsController {
     response.statusCode = 200;
     response.write('This is the list of our students\n');
     try {
-      const data = await readDatabase('database.csv');
+      const data = await readDatabase(process.argv[2]);
       const dataReturned = [];
       for (const [key, value] of data) {
         dataReturned.push(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
@@ -13,7 +13,7 @@ class StudentsController {
       response.end(dataReturned.join('\n'));
     } catch (err) {
       response.statusCode = 500;
-      response.end(err.message);
+      response.end('Cannot load the database');
     }
   }
 
@@ -24,13 +24,13 @@ class StudentsController {
       response.end('Major parameter must be CS or SWE');
     }
     try {
-      const data = await readDatabase('database.csv');
+      const data = await readDatabase(process.argv[2]);
       for (const [key, value] of data) {
         if (url === key) response.end(`List: ${value.join(', ')}`);
       }
     } catch (err) {
       response.statusCode = 500;
-      response.end(err.message);
+      response.end('Cannot load the database');
     }
   }
 }
